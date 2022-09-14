@@ -1,7 +1,7 @@
 import classes from './Character.module.css'
 
-const Character = ({char}) => {
-    let {id, name, status, species, gender, image} = char;
+const Character = ({character}) => {
+    let {id, name, status, species, gender, image} = character;
     return (
         <div className={classes.card}>
             <h2>{id} - {name}</h2>
