@@ -16,7 +16,7 @@ const Characters = () => {
     return (
         <div className={classes.container}>
             {
-                characters.map((character) => <Character key={character.id} char={character}/>)
+                characters.map((character) => <Character key={character.id} character={character}/>)
             }
         </div>
     );
