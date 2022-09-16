@@ -1,0 +1,11 @@
+.card {
+    width: 23%;
+    background: lightblue;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.buttonDiv {
+    display: flex;
+    justify-content: center;
+}

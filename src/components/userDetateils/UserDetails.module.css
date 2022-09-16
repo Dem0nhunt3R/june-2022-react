@@ -1,0 +1,11 @@
+.infoBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.par{
+    width: 30%;
+    text-align: center;
+}
