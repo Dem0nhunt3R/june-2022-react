@@ -1,7 +1,9 @@
+import Ships from "./components/ships/Ships";
+
 const App = () => {
     return (
         <div>
-            App works
+            <Ships/>
         </div>
     );
 };
