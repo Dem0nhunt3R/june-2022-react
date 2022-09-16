@@ -10,7 +10,6 @@ const Ships = () => {
     useEffect( () => {
         getShips().then(({data}) => {
             const filter = data.filter(flight => flight.launch_year !== '2020');
-            console.log(filter)
             setShips([...filter]);
         });
     }, []);
