@@ -9,24 +9,20 @@ import {explorer} from "../../utils/objRecursion";
 const Users = () => {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState(null);
-    const [key, setKey] = useState(0);
 
     useEffect(() => {
         getUsers().then(({data}) => setUsers([...data]))
     }, []);
 
     const showInfo = (id) => {
-        getUserById(id).then(({data}) => {
-            setUser([...explorer(data)]);
-            setKey(id);
-        })
+        getUserById(id).then(({data}) => setUser([...explorer(data)]));
     }
 
     return (
         <div>
             <div>
                 {
-                    user && <UserDetails key={key} userInfo={user}/>
+                    user && <UserDetails key={user[0].id} userInfo={user}/>
                 }
             </div>
             <div className={classes.container}>
