@@ -5,9 +5,9 @@ const User = ({user,showInfo}) => {
 
     return (
         <div className={classes.card}>
-            <h2>{id}. {name}</h2>
-            <p>{email}</p>
-            <p>{phone}</p>
+            <h2 className={classes.text}>{id}. {name}</h2>
+            <p className={classes.text}>{email}</p>
+            <p className={classes.text}>{phone}</p>
             <div className={classes.buttonDiv}>
                 <button onClick={() => showInfo(id)}>details</button>
             </div>
