@@ -1,7 +1,7 @@
 import {axiosInstance} from "./axios.service";
 
 const getUsers = () => {
-    return axiosInstance.get();
+    return axiosInstance.get('');
 }
 
 const getPosts = (id) => {
