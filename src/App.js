@@ -1,7 +1,9 @@
+import Launches from "./components/Launches";
+
 const App = () => {
     return (
         <div>
-            App works
+            <Launches/>
         </div>
     );
 };
