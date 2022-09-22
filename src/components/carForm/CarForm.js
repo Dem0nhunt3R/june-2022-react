@@ -18,9 +18,10 @@ const CarForm = ({setCars, carForUpdate, setCarForUpdate}) => {
     useEffect(() => {
         if (carForUpdate) {
             const {model, year, price} = carForUpdate;
-            setValue('model', model);
-            setValue('year', year);
-            setValue('price', price);
+
+            setValue('model', model, {shouldValidate: true});
+            setValue('year', year, {shouldValidate: true});
+            setValue('price', price, {shouldValidate: true});
         }
     }, [carForUpdate]);
 
@@ -30,9 +31,9 @@ const CarForm = ({setCars, carForUpdate, setCarForUpdate}) => {
             setCars(cars => {
                 const findIndex = cars.findIndex(car => car.id === data.id);
                 cars.splice(findIndex, 1, data);
-                setCarForUpdate(null);
                 return [...cars];
             });
+            setCarForUpdate(null);
         } else {
             const {data} = await carService.createCar(car);
             setCars(cars => [...cars, data]);
@@ -44,16 +45,19 @@ const CarForm = ({setCars, carForUpdate, setCarForUpdate}) => {
         <form onSubmit={handleSubmit(formSubmit)}>
             <label className={css.block}>Model
                 <input type="text" placeholder={'model'} {...register('model')}/>
+                {errors.model && <span>{errors.model.message}</span>}
             </label>
-            {errors.model && <span>{errors.model.message}</span>}
             <label className={css.block}> Price
-                <input type="text" placeholder={'price'} {...register('price', {valueAsNumber: true})}/>
+                <input type="text" placeholder={'price'}
+                       {...register('price', {valueAsNumber: true})}
+                />
+                {errors.price && <span>{errors.price.message}</span>}
             </label>
-            {errors.price && <span>{errors.price.message}</span>}
             <label className={css.block}> Year
-                <input type="text" placeholder={'year'} {...register('year', {valueAsNumber: true})}/>
+                <input type="text" placeholder={'year'}
+                       {...register('year', {valueAsNumber: true})}/>
+                {errors.year && <span>{errors.year.message}</span>}
             </label>
-            {errors.year && <span className={css.block}>{errors.year.message}</span>}
             <button disabled={!isValid}>{carForUpdate ? 'Update' : 'Create'}</button>
         </form>
     );

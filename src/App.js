@@ -1,11 +1,8 @@
 import Cars from "./components/cars/Cars";
 
+
 const App = () => {
-    return (
-        <div>
-            <Cars/>
-        </div>
-    );
+    return (<Cars/>);
 };
 
 export default App;
