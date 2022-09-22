@@ -12,11 +12,13 @@ const Cars = () => {
         carService.getCars().then(({data}) => setCars([...data]))
     }, []);
 
-    const deleteCar = (id) => {
-        carService.deleteCar(id);
-        const index = cars.findIndex(car => car.id === id);
-        cars.splice(index, 1);
-        setCars([...cars]);
+    const deleteCar = async (id) => {
+        const {status} = await carService.deleteCar(id);
+        if (status === 204) {
+            const index = cars.findIndex(car => car.id === id);
+            cars.splice(index, 1);
+            setCars([...cars]);
+        }
     }
 
     return (
