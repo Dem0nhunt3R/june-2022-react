@@ -6,7 +6,7 @@ import {getPageCount} from "../utils/pages";
 
 const Launches = () => {
     const [launches, setLaunches] = useState([]);
-    const [limit, setLimit] = useState(10);
+    const [limit, setLimit] = useState(9);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
 
@@ -24,7 +24,7 @@ const Launches = () => {
 
     return (
         <div>
-            <div className='flex'>
+            <div className='flex flex-wrap'>
                 {launches.map((launch) => <Launch key={launch.mission_name} launch={launch}/>)}
             </div>
             <Pagination totalPages={totalPages} page={page} changePage={changePage}/>
