@@ -1,0 +1,12 @@
+.outlet{
+    min-height: 165px;
+    background-color: aquamarine;
+    margin: 0;
+    padding: 0;
+}
+
+.commentsBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,19 @@
+.usersBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    margin-top: 20px;
+}
+
+.w70{
+    width: 70%;
+}
+
+.w30{
+    width: 30%;
+}

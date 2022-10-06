@@ -1,0 +1,12 @@
+.outlet{
+    min-height: 100px;
+    background-color: aquamarine;
+    margin: 0;
+    padding: 0;
+}
+
+.postsBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

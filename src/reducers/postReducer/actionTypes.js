@@ -1,0 +1,5 @@
+const LOAD_POSTS = 'LOAD_POSTS';
+const GET_POST = 'GET_POST';
+const CLEAR_POST = 'CLEAR_POST';
+
+export {GET_POST, CLEAR_POST, LOAD_POSTS}
